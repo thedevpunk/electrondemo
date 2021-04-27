@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H&P Electron Demo</title>
+    <style>
+      .notification-wrapper {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+      }
+
+      .notification {
+        padding: 1rem;
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.192);
+        transition: all 0.5s ease;
+        transform: translateX(calc(-100% - 20px));
+        margin-bottom: 1rem;
+      }
+
+      .show {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Version <span id="app-version"></span></h2>
+    <h1>🧟‍♂️🧜‍🧓👴</h1>
+    <button id="main-button">click me</button>
+    <ul id="result-index"></ul>
+    <button id="check-updates">check for updates</button>
+
+    <div id="notification-wrapper" class="notification-wrapper">
+      <div id="notification-01" class="notification">
+        <p id="notification-message-01">Neues Update verfügbar. Es wird heruntergeladen...</p>
+        <button id="notification-close-button-01">Close</button>
+      </div>
+
+      <div id="notification-02" class="notification">
+        <p id="notification-message-02">Das Update ist heruntergeladen und wird beim Neustart der App installiert. Jetzt neu starten?</p>
+        <button id="notification-close-button-02">Close</button>
+        <button id="notification-restart-button">restart</button>
+      </div>
+
+    </div>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>

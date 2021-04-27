@@ -1,0 +1,41 @@
+{
+  "name": "electrondemo",
+  "version": "1.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.4",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.8"
+  },
+  "build": {
+    "appId": "com.hpinfomedia.electrondemo",
+    "productName": "H&P Electron Demo",
+    "win": {
+      "target": "nsis",
+      "icon": "./icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./iconInstaller.ico",
+      "uninstallerIcon": "./iconInstaller.ico",
+      "license": "./license.txt"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://localhost:5002/"
+      }
+    ]
+  }
+}
